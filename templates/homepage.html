@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cloud Drive DFR Prototype - Dashboard [Home]</title>
+    </head>
+    <body>
+        <h1>Search for evidence files related to file on SharePoint</h1>
+        <form action="/search" method="post">
+            <label for="filename">File Name:</label>
+            <input type="text" id="filename" name="filename"><br>
+            <input type="submit" value="Search">
+        </form>
+        {% if not error == None %}
+        <h3>Error: {{ error }}</h3>
+        {% endif %}
+    </body>
+</html>

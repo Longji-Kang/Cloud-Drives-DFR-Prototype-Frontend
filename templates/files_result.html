@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cloud Drive DFR Prototype - Dashboard [Results]</title>
+    </head>
+    <body>
+        <h1>Results:</h1>
+        {% for file in files %}
+            <p1> File ID: {{ file.file_id }} </p1> <br>
+            <p1> File Name: {{ file.current_file_name }} </p1> <br>
+            <p1> File Path: {{ file.current_file_name }} </p1> <br>
+            {% for evidence in file.evidence_files %}
+                <form action="/getevidence" method="post">
+                    &emsp;<label>{{ evidence }}</label> <br>
+                    <input type="hidden" id="evidence_name" name="evidence_name" value="{{ evidence }}">
+                    &emsp;<input type="submit" value="Verify, Decrypt And Download">
+                </form>
+            {% endfor %}
+        {% endfor %}
+    </body>
+</html>
